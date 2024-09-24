@@ -58,5 +58,8 @@ members[c(TRUE, FALSE, FALSE, TRUE)]
 members > 6
 
 members[members > 6]
-members[members == 6]
+members[members == 6] # Find where is '6'
+length(members[members == 6]) # Find counts of '6'
+sum(members == 6)
+
 
