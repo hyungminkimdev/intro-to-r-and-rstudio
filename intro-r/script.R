@@ -4,7 +4,7 @@ download.file(
   "data/SAFI_clean.csv", mode = "wb"
 )
 
-install.packages("tidyverse") # install packages
+# install.packages("tidyverse") # install packages
 library(tidyverse) # Load packages
 
 #### Create objects ####
@@ -134,3 +134,26 @@ year(dates)
 interviews$day <- day(dates)
 interviews$month <- month(dates)
 glimpse(interviews)
+
+
+
+# 1. Select columns
+# 2. Filter rows
+# 3. Create new columns based on data from rows
+# 4. Summaries of columns
+# 5. Arrange our rows
+
+# Select columns -----------------------------------------------------
+# Cmd + Shift + R
+
+?select()
+select(interviews, key_ID, village, respondent_wall_type)
+select(interviews, village:rooms)
+select(interviews, -instanceID)
+
+
+# Filter rows ---------------------------------------------------------
+distinct(interviews, village)
+filter(interviews, village == "Chirodzo")
+
+
